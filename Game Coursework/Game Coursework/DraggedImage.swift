@@ -27,6 +27,17 @@ class DraggedImageView: UIImageView {
         
         self.center = CGPoint(x: self.center.x+dx, y: self.center.y+dy)
         
+        let horizontal = self.bounds.midX
+        center.x = max(horizontal,center.x)
+        center.x = min(self.superview!.bounds.size.width - horizontal, center.x)
+        
+        let vertical = self.bounds.midY
+        center.y = max(vertical, center.y)
+        center.y = min(self.superview!.bounds.size.height - vertical, center.y)
+        
+        self.center = center
+        
+        
         self.myDelegate?.changeSomething()
     }
     

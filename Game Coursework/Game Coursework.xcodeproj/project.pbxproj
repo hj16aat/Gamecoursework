@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E00AFD521C272EE00C574C8 /* star coin rotate 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E00AFCF21C272ED00C574C8 /* star coin rotate 1.png */; };
+		8E00AFD621C272EE00C574C8 /* star coin rotate 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E00AFD021C272ED00C574C8 /* star coin rotate 3.png */; };
+		8E00AFD721C272EE00C574C8 /* star coin rotate 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E00AFD121C272ED00C574C8 /* star coin rotate 4.png */; };
+		8E00AFD821C272EE00C574C8 /* star coin rotate 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E00AFD221C272EE00C574C8 /* star coin rotate 2.png */; };
+		8E00AFD921C272EE00C574C8 /* star coin rotate 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E00AFD321C272EE00C574C8 /* star coin rotate 5.png */; };
+		8E00AFDA21C272EE00C574C8 /* star coin rotate 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E00AFD421C272EE00C574C8 /* star coin rotate 6.png */; };
 		8E04510C219D8D1B0064D8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E04510B219D8D1B0064D8C3 /* AppDelegate.swift */; };
 		8E04510E219D8D1B0064D8C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E04510D219D8D1B0064D8C3 /* ViewController.swift */; };
 		8E045111219D8D1B0064D8C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E04510F219D8D1B0064D8C3 /* Main.storyboard */; };
@@ -49,7 +55,6 @@
 		8E05645221A6C7440010A1B0 /* plane9.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E05640E21A6C7410010A1B0 /* plane9.png */; };
 		8E05645321A6C7440010A1B0 /* cloud2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E05640F21A6C7410010A1B0 /* cloud2.png */; };
 		8E05645421A6C7440010A1B0 /* road15.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E05641021A6C7410010A1B0 /* road15.png */; };
-		8E05645521A6C7440010A1B0 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E05641121A6C7410010A1B0 /* coin.png */; };
 		8E05645621A6C7440010A1B0 /* road18.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E05641221A6C7410010A1B0 /* road18.png */; };
 		8E05645721A6C7440010A1B0 /* bird7.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E05641321A6C7410010A1B0 /* bird7.png */; };
 		8E05645821A6C7440010A1B0 /* house1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E05641421A6C7410010A1B0 /* house1.png */; };
@@ -104,6 +109,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E00AFCF21C272ED00C574C8 /* star coin rotate 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star coin rotate 1.png"; sourceTree = "<group>"; };
+		8E00AFD021C272ED00C574C8 /* star coin rotate 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star coin rotate 3.png"; sourceTree = "<group>"; };
+		8E00AFD121C272ED00C574C8 /* star coin rotate 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star coin rotate 4.png"; sourceTree = "<group>"; };
+		8E00AFD221C272EE00C574C8 /* star coin rotate 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star coin rotate 2.png"; sourceTree = "<group>"; };
+		8E00AFD321C272EE00C574C8 /* star coin rotate 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star coin rotate 5.png"; sourceTree = "<group>"; };
+		8E00AFD421C272EE00C574C8 /* star coin rotate 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star coin rotate 6.png"; sourceTree = "<group>"; };
 		8E045108219D8D1B0064D8C3 /* Game Coursework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Coursework.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E04510B219D8D1B0064D8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E04510D219D8D1B0064D8C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -152,7 +163,6 @@
 		8E05640E21A6C7410010A1B0 /* plane9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane9.png; sourceTree = "<group>"; };
 		8E05640F21A6C7410010A1B0 /* cloud2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud2.png; sourceTree = "<group>"; };
 		8E05641021A6C7410010A1B0 /* road15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road15.png; sourceTree = "<group>"; };
-		8E05641121A6C7410010A1B0 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
 		8E05641221A6C7410010A1B0 /* road18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road18.png; sourceTree = "<group>"; };
 		8E05641321A6C7410010A1B0 /* bird7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird7.png; sourceTree = "<group>"; };
 		8E05641421A6C7410010A1B0 /* house1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house1.png; sourceTree = "<group>"; };
@@ -249,7 +259,6 @@
 				8E05640321A6C7400010A1B0 /* bird10.png */,
 				8E05643221A6C7440010A1B0 /* cloud.png */,
 				8E05640F21A6C7410010A1B0 /* cloud2.png */,
-				8E05641121A6C7410010A1B0 /* coin.png */,
 				8E0563F421A6C73F0010A1B0 /* explosion.png */,
 				8E0563F521A6C73F0010A1B0 /* game_over.jpg */,
 				8E05641421A6C7410010A1B0 /* house1.png */,
@@ -307,6 +316,12 @@
 				8E0563F221A6C73F0010A1B0 /* tree17.png */,
 				8E04510B219D8D1B0064D8C3 /* AppDelegate.swift */,
 				8E04510D219D8D1B0064D8C3 /* ViewController.swift */,
+				8E00AFCF21C272ED00C574C8 /* star coin rotate 1.png */,
+				8E00AFD221C272EE00C574C8 /* star coin rotate 2.png */,
+				8E00AFD021C272ED00C574C8 /* star coin rotate 3.png */,
+				8E00AFD121C272ED00C574C8 /* star coin rotate 4.png */,
+				8E00AFD321C272EE00C574C8 /* star coin rotate 5.png */,
+				8E00AFD421C272EE00C574C8 /* star coin rotate 6.png */,
 				8E08FFAD21ADD71400784508 /* DraggedImage.swift */,
 				8E04510F219D8D1B0064D8C3 /* Main.storyboard */,
 				8E045115219D8D1C0064D8C3 /* Assets.xcassets */,
@@ -457,18 +472,21 @@
 				8E05645021A6C7440010A1B0 /* tree16.png in Resources */,
 				8E05644521A6C7440010A1B0 /* road16.png in Resources */,
 				8E05643E21A6C7440010A1B0 /* bird1.png in Resources */,
-				8E05645521A6C7440010A1B0 /* coin.png in Resources */,
 				8E05645E21A6C7440010A1B0 /* road8.png in Resources */,
 				8E05646921A6C7440010A1B0 /* road12.png in Resources */,
 				8E05646421A6C7440010A1B0 /* plane1.png in Resources */,
 				8E05646C21A6C7440010A1B0 /* road10.png in Resources */,
 				8E05645821A6C7440010A1B0 /* house1.png in Resources */,
 				8E05645421A6C7440010A1B0 /* road15.png in Resources */,
+				8E00AFD721C272EE00C574C8 /* star coin rotate 4.png in Resources */,
 				8E05644A21A6C7440010A1B0 /* tree6.png in Resources */,
 				8E05643D21A6C7440010A1B0 /* road13.png in Resources */,
+				8E00AFDA21C272EE00C574C8 /* star coin rotate 6.png in Resources */,
 				8E05645A21A6C7440010A1B0 /* road9.png in Resources */,
+				8E00AFD821C272EE00C574C8 /* star coin rotate 2.png in Resources */,
 				8E05643721A6C7440010A1B0 /* tree7.png in Resources */,
 				8E05646B21A6C7440010A1B0 /* tree2.png in Resources */,
+				8E00AFD921C272EE00C574C8 /* star coin rotate 5.png in Resources */,
 				8E05645121A6C7440010A1B0 /* road19.png in Resources */,
 				8E05646A21A6C7440010A1B0 /* bird9.png in Resources */,
 				8E05643F21A6C7440010A1B0 /* road6.png in Resources */,
@@ -490,6 +508,7 @@
 				8E05643621A6C7440010A1B0 /* tree17.png in Resources */,
 				8E05644E21A6C7440010A1B0 /* road2.png in Resources */,
 				8E05645721A6C7440010A1B0 /* bird7.png in Resources */,
+				8E00AFD621C272EE00C574C8 /* star coin rotate 3.png in Resources */,
 				8E05646E21A6C7440010A1B0 /* plane6.png in Resources */,
 				8E05646621A6C7440010A1B0 /* bird2.png in Resources */,
 				8E05644921A6C7440010A1B0 /* tree5.png in Resources */,
@@ -499,6 +518,7 @@
 				8E05644321A6C7440010A1B0 /* bird3.png in Resources */,
 				8E05643A21A6C7440010A1B0 /* plane10.png in Resources */,
 				8E05646221A6C7440010A1B0 /* tree4.png in Resources */,
+				8E00AFD521C272EE00C574C8 /* star coin rotate 1.png in Resources */,
 				8E05645C21A6C7440010A1B0 /* road1.png in Resources */,
 				8E05645D21A6C7440010A1B0 /* bird5.png in Resources */,
 				8E05644821A6C7440010A1B0 /* plane4.png in Resources */,

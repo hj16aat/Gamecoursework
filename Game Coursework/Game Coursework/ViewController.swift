@@ -6,8 +6,8 @@
 //  Copyright © 2018 Hetarth Joshi. All rights reserved.
 //
 
-import UIKit //functions for the user interface
-
+import UIKit //function for the user interface
+import SpriteKit //function for collsiion behavior
 protocol subviewDelegate{
     func changeSomething()
 }
@@ -25,6 +25,7 @@ class ViewController: UIViewController, subviewDelegate {
         
     }
     
+   
     //defining mutable variables
     
     var dynamicBehavior: UIDynamicItemBehavior!
@@ -33,17 +34,17 @@ class ViewController: UIViewController, subviewDelegate {
     var gravityBehavior: UIGravityBehavior!
     
     
+    @IBOutlet weak var movingroadImage: UIImageView! //connection for  moving road image
+    
+    @IBOutlet weak var aeroplaneImage: DraggedImageView! //connection for drag and drop animated aeroplane image
+    
+    @IBOutlet weak var SequenceOfTreeImages: UIImageView! //connection for sequence of tree images
+    
+    
     //defining a constant array of birds
     
     let arrayOfBirds = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
-    
-
-    
-    @IBOutlet weak var movingroadImage: UIImageView! //connection for  moving road image
-    
-    @IBOutlet weak var aeroplaneImage: DraggedImageView! //connection for drraged aeroplane image
-    
-    @IBOutlet weak var SequenceOfTreeImages: UIImageView! //connection for sequence tree images
+    let arrayofCoins = [0, 2 ,4, 6, 8, 10, 12, 14, 16, 18, 20]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +61,8 @@ class ViewController: UIViewController, subviewDelegate {
         dynamicAnimator.addBehavior(collisionBehavior)
         collisionBehavior.addBoundary(withIdentifier: "barrier" as NSCopying, for: UIBezierPath(rect: aeroplaneImage.frame))
         
-    
+       
+    self.navigationController?.isNavigationBarHidden = true
     
     var imageArray: [UIImage]! //road images
     var imageArray2: [UIImage]!//tree images
@@ -87,8 +89,8 @@ class ViewController: UIViewController, subviewDelegate {
                    UIImage (named: "road18.png")!,
                    UIImage (named: "road19.png")!]
         
-        movingroadImage.image = UIImage.animatedImage(with: imageArray, duration: 1)
-        movingroadImage.frame = CGRect(x:0,y:0, width: W*1, height:H*1)
+        movingroadImage.image = UIImage.animatedImage(with: imageArray, duration: 1) //adds animations to the road
+        movingroadImage.frame = CGRect(x:0,y:0, width: W*1, height:H*1) //set the size of the road
         
         imageArray2 = [ UIImage (named:"tree1.png")!,
                        UIImage (named: "tree2.png")!,
@@ -110,12 +112,12 @@ class ViewController: UIViewController, subviewDelegate {
         
         
         
-    SequenceOfTreeImages.image = UIImage.animatedImage(with: imageArray2, duration: 1)
+    SequenceOfTreeImages.image = UIImage.animatedImage(with: imageArray2, duration: 1) //adds animations to the trees
         
-    SequenceOfTreeImages.frame = CGRect(x:0,y:H*(-0.2),width:W*1,height:H*1)
+    SequenceOfTreeImages.frame = CGRect(x:0,y:H*(-0.2),width:W*1,height:H*1) //set the size of the trees
     
         
-        //self.view.bringSubviewToFront(treeImage)
+    self.view.bringSubviewToFront(aeroplaneImage) //keeps the aeroplane image in front of the trees when dragged
         
         imageArray3 = [ UIImage (named:"plane1.png")!,
                         UIImage (named: "plane2.png")!,
@@ -146,7 +148,7 @@ class ViewController: UIViewController, subviewDelegate {
                 
         //Create a new UIImageView from scratch
         
-        let birdView = UIImageView(image:nil)
+        let AnimatedBirds = UIImageView(image:nil)
         var imageArray4: [UIImage]
         
         imageArray4 = [UIImage (named: "bird1.png")!,
@@ -162,34 +164,71 @@ class ViewController: UIViewController, subviewDelegate {
                 
         //Assign an image to the image view
         
-        birdView.image = UIImage.animatedImage(with: imageArray4, duration: 2)
+        AnimatedBirds.image = UIImage.animatedImage(with: imageArray4, duration: 2)
                 
         //Assign the size and position of the image
         
-        birdView.frame = CGRect(x: self.W, y: CGFloat(arc4random_uniform(UInt32(self.H))), width: self.W*(0.175), height: self.H*(0.175))
+        AnimatedBirds.frame = CGRect(x: self.W, y: CGFloat(arc4random_uniform(UInt32(self.H))), width: self.W*(0.17), height: self.H*(0.17))
                 
-        //Add the image view to the main view
+        
                 
-        self.view.addSubview(birdView)
-        self.view.bringSubviewToFront(birdView)
+        self.view.addSubview(AnimatedBirds) //Add the image view to the main view
+        self.view.bringSubviewToFront(AnimatedBirds)//keeps the birds in front of other background images
         
-        self.dynamicBehavior.addItem(birdView)
-        self.dynamicBehavior.addLinearVelocity(CGPoint(x:-300, y:10), for: birdView)
-        self.collisionBehavior.addItem(birdView)
-    
+        self.dynamicBehavior.addItem(AnimatedBirds)
+        self.dynamicBehavior.addLinearVelocity(CGPoint(x:-300, y:10), for: AnimatedBirds)
+        self.collisionBehavior.addItem(AnimatedBirds)
+            }
         }
+        
+            
+        for index in 0...10 {
+        let delay = Double(self.arrayofCoins[index])
+        let when = DispatchTime.now() + delay
+                
+        DispatchQueue.main.asyncAfter(deadline: when){
+            
+            
+        let coins = UIImageView(image:nil)
+        var imageArray5: [UIImage]
+            
+        imageArray5 = [UIImage (named: "star coin rotate 1.png")!,
+                       UIImage (named: "star coin rotate 2.png")!,
+                       UIImage (named: "star coin rotate 3.png")!,
+                       UIImage (named: "star coin rotate 4.png")!,
+                       UIImage (named: "star coin rotate 5.png")!,
+                       UIImage (named: "star coin rotate 6.png")!]
+            
+        //Assign an image to the image view
+            
+        coins.image = UIImage.animatedImage(with: imageArray5, duration: 2)
+            
+            
+        coins.frame = CGRect(x: self.W, y: CGFloat(arc4random_uniform(UInt32(self.H))), width: self.W*(0.08),
+        height: self.H*(0.08))
+            
+        //Assign the size and position of the image
+            
+            
+        self.view.addSubview(coins)
+        self.view.bringSubviewToFront(coins)
+            
+        self.dynamicBehavior.addItem(coins)
+        self.dynamicBehavior.addLinearVelocity(CGPoint(x:-100, y:10), for: coins)
+        self.collisionBehavior.addItem(coins)
+          
+            
+            }
+            
         }
-        
-        
-        //birdView.image = UIImage(named: "bird1.png")
-        
-
-
-   }
+                
+            
+    }
         
 
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+            super.didReceiveMemoryWarning()
     }
     
+
 }
