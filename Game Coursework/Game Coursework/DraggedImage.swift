@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import SpriteKit
 
 class DraggedImageView: UIImageView {
     
     var myDelegate: subviewDelegate?
     var startLocation: CGPoint?
+    
+    
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -37,10 +40,13 @@ class DraggedImageView: UIImageView {
         
         self.center = center
         
+    
         
         self.myDelegate?.changeSomething()
     }
     
+    
+   
     
     
 }

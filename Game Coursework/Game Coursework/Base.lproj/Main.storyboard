@@ -30,12 +30,18 @@
                                 <rect key="frame" x="20" y="261" width="639" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gB9-cT-xXN">
+                                <rect key="frame" x="0.0" y="32" width="708" height="362"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="LQ2-9e-a4I"/>
                     <connections>
+                        <outlet property="GameOverScreen" destination="gB9-cT-xXN" id="3jO-20-RD0"/>
                         <outlet property="SequenceOfTreeImages" destination="wco-gm-SbO" id="Nii-iv-nbg"/>
                         <outlet property="aeroplaneImage" destination="JWh-yh-hII" id="wnW-5M-gxR"/>
                         <outlet property="movingroadImage" destination="eaf-t0-a8I" id="wMY-af-Vfd"/>

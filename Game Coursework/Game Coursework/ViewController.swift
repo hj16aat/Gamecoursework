@@ -7,7 +7,7 @@
 //
 
 import UIKit //function for the user interface
-import SpriteKit //function for collsiion behavior
+
 protocol subviewDelegate{
     func changeSomething()
 }
@@ -20,13 +20,13 @@ class ViewController: UIViewController, subviewDelegate {
     let H = UIScreen.main.bounds.height //define height to fit different phone screens
     
     func changeSomething() {
-        collisionBehavior.removeAllBoundaries()
-        collisionBehavior.addBoundary(withIdentifier: "barrier" as NSCopying, for: UIBezierPath(rect: aeroplaneImage.frame)) //set the boundary as the aeroplane image
+        collisionBehavior.removeAllBoundaries() //remove all existing boundaries
+        collisionBehavior.addBoundary(withIdentifier: "barrier" as NSCopying, for: UIBezierPath(rect: aeroplaneImage.frame)) //set the boundary of collisions as the aeroplane image
         
     }
     
    
-    //defining mutable variables
+    //defining mutable variables which describe the behaviour of the objects
     
     var dynamicBehavior: UIDynamicItemBehavior!
     var collisionBehavior: UICollisionBehavior!
@@ -34,23 +34,30 @@ class ViewController: UIViewController, subviewDelegate {
     var gravityBehavior: UIGravityBehavior!
     
     
-    @IBOutlet weak var movingroadImage: UIImageView! //connection for  moving road image
-    
-    @IBOutlet weak var aeroplaneImage: DraggedImageView! //connection for drag and drop animated aeroplane image
-    
-    @IBOutlet weak var SequenceOfTreeImages: UIImageView! //connection for sequence of tree images
+    var CoinsCollectedTotalScore:Int = 0 //creating variable for the total score and initialising it to 0
     
     
-    //defining a constant array of birds
+    @IBOutlet weak var movingroadImage: UIImageView! //connection to storyborad for  moving road image
     
-    let arrayOfBirds = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
-    let arrayofCoins = [0, 2 ,4, 6, 8, 10, 12, 14, 16, 18, 20]
+    @IBOutlet weak var aeroplaneImage: DraggedImageView! //connection to storyborad for animated aeroplane image
+    
+    @IBOutlet weak var SequenceOfTreeImages: UIImageView! //connection to storyborad for sequence of tree images
+    
+    @IBOutlet weak var GameOverScreen: UIView! //connection to storyboard for Game Over Screen Image
+
+    let arrayOfBirds = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20] //defining a constant array of birds
+
+    let arrayOfCoins = [0, 2 ,4, 6, 8, 10, 12] //defining a constant array of coins
+
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         
-       aeroplaneImage.myDelegate = self
+        aeroplaneImage.myDelegate = self
+        
+        //adding the different behaviors for the objects in the game
         
         dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
         dynamicBehavior = UIDynamicItemBehavior(items: [])
@@ -59,15 +66,17 @@ class ViewController: UIViewController, subviewDelegate {
         gravityBehavior = UIGravityBehavior(items: [])
         collisionBehavior = UICollisionBehavior (items: [])
         dynamicAnimator.addBehavior(collisionBehavior)
-        collisionBehavior.addBoundary(withIdentifier: "barrier" as NSCopying, for: UIBezierPath(rect: aeroplaneImage.frame))
+        collisionBehavior.addBoundary(withIdentifier: "barrier" as NSCopying, for: UIBezierPath(rect: aeroplaneImage.frame)) //setting the boundary as the aeroplane image
         
        
-    self.navigationController?.isNavigationBarHidden = true
+    self.navigationController?.isNavigationBarHidden = true //removes the navigation bar from the top of the screen
+        
     
+        
     var imageArray: [UIImage]! //road images
     var imageArray2: [UIImage]!//tree images
     var imageArray3: [UIImage]!//plane images
-    //var imageArray4: [UIImage]! bird images
+    
     
     imageArray = [ UIImage (named: "road1.png")!,
                    UIImage (named: "road2.png")!,
@@ -89,26 +98,26 @@ class ViewController: UIViewController, subviewDelegate {
                    UIImage (named: "road18.png")!,
                    UIImage (named: "road19.png")!]
         
-        movingroadImage.image = UIImage.animatedImage(with: imageArray, duration: 1) //adds animations to the road
-        movingroadImage.frame = CGRect(x:0,y:0, width: W*1, height:H*1) //set the size of the road
+    movingroadImage.image = UIImage.animatedImage(with: imageArray, duration: 1) //adds animations to the road
+    movingroadImage.frame = CGRect(x:0,y:0, width: W*1, height:H*1) //set the size of the road
         
-        imageArray2 = [ UIImage (named:"tree1.png")!,
-                       UIImage (named: "tree2.png")!,
-                       UIImage (named: "tree3.png")!,
-                       UIImage (named: "tree4.png")!,
-                       UIImage (named: "tree5.png")!,
-                       UIImage (named: "tree6.png")!,
-                       UIImage (named: "tree7.png")!,
-                       UIImage (named: "tree8.png")!,
-                       UIImage (named: "tree9.png")!,
-                       UIImage (named: "tree10.png")!,
-                       UIImage (named: "tree11.png")!,
-                       UIImage (named: "tree12.png")!,
-                       UIImage (named: "tree13.png")!,
-                       UIImage (named: "tree14.png")!,
-                       UIImage (named: "tree15.png")!,
-                       UIImage (named: "tree16.png")!,
-                       UIImage (named: "tree17.png")!]
+    imageArray2 = [ UIImage (named:"tree1.png")!,
+                    UIImage (named: "tree2.png")!,
+                    UIImage (named: "tree3.png")!,
+                    UIImage (named: "tree4.png")!,
+                    UIImage (named: "tree5.png")!,
+                    UIImage (named: "tree6.png")!,
+                    UIImage (named: "tree7.png")!,
+                    UIImage (named: "tree8.png")!,
+                    UIImage (named: "tree9.png")!,
+                    UIImage (named: "tree10.png")!,
+                    UIImage (named: "tree11.png")!,
+                    UIImage (named: "tree12.png")!,
+                    UIImage (named: "tree13.png")!,
+                    UIImage (named: "tree14.png")!,
+                    UIImage (named: "tree15.png")!,
+                    UIImage (named: "tree16.png")!,
+                    UIImage (named: "tree17.png")!]
         
         
         
@@ -119,113 +128,149 @@ class ViewController: UIViewController, subviewDelegate {
         
     self.view.bringSubviewToFront(aeroplaneImage) //keeps the aeroplane image in front of the trees when dragged
         
-        imageArray3 = [ UIImage (named:"plane1.png")!,
-                        UIImage (named: "plane2.png")!,
-                        UIImage (named: "plane3.png")!,
-                        UIImage (named: "plane4.png")!,
-                        UIImage (named: "plane5.png")!,
-                        UIImage (named: "plane6.png")!,
-                        UIImage (named: "plane7.png")!,
-                        UIImage (named: "plane8.png")!,
-                        UIImage (named: "plane9.png")!,
-                        UIImage (named: "plane10.png")!,
-                        UIImage (named: "plane11.png")!,
-                        UIImage (named: "plane12.png")!,
-                        UIImage (named: "plane13.png")!,
-                        UIImage (named: "plane14.png")!,
-                        UIImage (named: "plane15.png")!]
+    imageArray3 = [ UIImage (named:"plane1.png")!,
+                    UIImage (named: "plane2.png")!,
+                    UIImage (named: "plane3.png")!,
+                    UIImage (named: "plane4.png")!,
+                    UIImage (named: "plane5.png")!,
+                    UIImage (named: "plane6.png")!,
+                    UIImage (named: "plane7.png")!,
+                    UIImage (named: "plane8.png")!,
+                    UIImage (named: "plane9.png")!,
+                    UIImage (named: "plane10.png")!,
+                    UIImage (named: "plane11.png")!,
+                    UIImage (named: "plane12.png")!,
+                    UIImage (named: "plane13.png")!,
+                    UIImage (named: "plane14.png")!,
+                    UIImage (named: "plane15.png")!]
+    
+    aeroplaneImage.image = UIImage.animatedImage(with: imageArray3, duration: 1) //adds animations to the plane
+    
+    aeroplaneImage.frame = CGRect(x: 0,y:H*(0.3),width:W*(0.2),height:H*(0.2)) //sets the dimensions of the plane
         
-        aeroplaneImage.image = UIImage.animatedImage(with: imageArray3, duration: 1)
-        
-        aeroplaneImage.frame = CGRect(x: 0,y:H*(0.3),width:W*(0.2),height:H*(0.2))
-        
+    
      
-        for index in 0...10 {
-            let delay = Double(self.arrayOfBirds[index])
-            let when = DispatchTime.now() + delay
+    for index in 0...10 { //for all of the elements in the bird array
+        let delay = Double(self.arrayOfBirds[index])
+        let when = DispatchTime.now() + delay //adding delay in appearance of the birds
             
-            DispatchQueue.main.asyncAfter(deadline: when) {
+        DispatchQueue.main.asyncAfter(deadline: when) {
                 
         //Create a new UIImageView from scratch
         
         let AnimatedBirds = UIImageView(image:nil)
         var imageArray4: [UIImage]
         
-        imageArray4 = [UIImage (named: "bird1.png")!,
-                       UIImage (named: "bird2.png")!,
-                       UIImage (named: "bird3.png")!,
-                       UIImage (named: "bird4.png")!,
-                       UIImage (named: "bird5.png")!,
-                       UIImage (named: "bird6.png")!,
-                       UIImage (named: "bird7.png")!,
-                       UIImage (named: "bird8.png")!,
-                       UIImage (named: "bird9.png")!,
-                       UIImage (named: "bird10.png")!]
+    imageArray4 = [UIImage (named: "bird1.png")!,
+                   UIImage (named: "bird2.png")!,
+                   UIImage (named: "bird3.png")!,
+                   UIImage (named: "bird4.png")!,
+                   UIImage (named: "bird5.png")!,
+                   UIImage (named: "bird6.png")!,
+                   UIImage (named: "bird7.png")!,
+                   UIImage (named: "bird8.png")!,
+                   UIImage (named: "bird9.png")!,
+                   UIImage (named: "bird10.png")!]
                 
-        //Assign an image to the image view
-        
-        AnimatedBirds.image = UIImage.animatedImage(with: imageArray4, duration: 2)
+    //Assign an image to the image view
+    
+    AnimatedBirds.image = UIImage.animatedImage(with: imageArray4, duration: 1)
                 
-        //Assign the size and position of the image
+    //Assign the size and position of the image
         
-        AnimatedBirds.frame = CGRect(x: self.W, y: CGFloat(arc4random_uniform(UInt32(self.H))), width: self.W*(0.17), height: self.H*(0.17))
+    AnimatedBirds.frame = CGRect(x: self.W, y: CGFloat(arc4random_uniform(UInt32(self.H))), width: self.W*(0.17), height: self.H*(0.17))
                 
         
                 
-        self.view.addSubview(AnimatedBirds) //Add the image view to the main view
-        self.view.bringSubviewToFront(AnimatedBirds)//keeps the birds in front of other background images
+    self.view.addSubview(AnimatedBirds) //Add the image view to the main view
+    self.view.bringSubviewToFront(AnimatedBirds)//keeps the birds in front of other obejcts
         
-        self.dynamicBehavior.addItem(AnimatedBirds)
-        self.dynamicBehavior.addLinearVelocity(CGPoint(x:-300, y:10), for: AnimatedBirds)
-        self.collisionBehavior.addItem(AnimatedBirds)
+    self.dynamicBehavior.addItem(AnimatedBirds)
+    self.dynamicBehavior.addLinearVelocity(CGPoint(x:-300, y:10), for: AnimatedBirds) // adds spped to the birds
+    self.collisionBehavior.addItem(AnimatedBirds)
+            
+            self.collisionBehavior.action =
+            {
+            
+            if(self.aeroplaneImage.frame.intersects(AnimatedBirds.frame))
+            {
+                
+                self.CoinsCollectedTotalScore -= 5 // remove 5 points from total score if plane collides with birds
+                
             }
         }
+    }
+}
+        
+        
+    for index in 0...6 {
+    let delay = Double(self.arrayOfCoins[index])
+    let when = DispatchTime.now() + delay
+                
+    DispatchQueue.main.asyncAfter(deadline: when){
         
             
-        for index in 0...10 {
-        let delay = Double(self.arrayofCoins[index])
-        let when = DispatchTime.now() + delay
+    let coins = UIImageView(image:nil)
+    var imageArray5: [UIImage]
+        
+            
+    imageArray5 =  [UIImage (named: "star coin rotate 1.png")!,
+                    UIImage (named: "star coin rotate 2.png")!,
+                    UIImage (named: "star coin rotate 3.png")!,
+                    UIImage (named: "star coin rotate 4.png")!,
+                    UIImage (named: "star coin rotate 5.png")!,
+                    UIImage (named: "star coin rotate 6.png")!]
+        
+    //Assign an image to the image view
+            
+    coins.image = UIImage.animatedImage(with: imageArray5, duration: 1) //adds animations to thew coins image
+            
+        
+    coins.frame = CGRect(x: self.W, y: CGFloat(arc4random_uniform(UInt32(self.H))), width: self.W*(0.08),
+    height: self.H*(0.08)) //Assign the size and position of the coins images
+            
+            
+    self.view.addSubview(coins)//adds the coins images to the main view
+        
+    self.dynamicBehavior.addItem(coins)
+    self.dynamicBehavior.addLinearVelocity(CGPoint(x:-150, y:10), for: coins) //adds speed to the coins movement.
+            
+    self.collisionBehavior.action =
+    {
+
+        if(self.aeroplaneImage.frame.intersects(coins.frame))
+        {
                 
-        DispatchQueue.main.asyncAfter(deadline: when){
-            
-            
-        let coins = UIImageView(image:nil)
-        var imageArray5: [UIImage]
-            
-        imageArray5 = [UIImage (named: "star coin rotate 1.png")!,
-                       UIImage (named: "star coin rotate 2.png")!,
-                       UIImage (named: "star coin rotate 3.png")!,
-                       UIImage (named: "star coin rotate 4.png")!,
-                       UIImage (named: "star coin rotate 5.png")!,
-                       UIImage (named: "star coin rotate 6.png")!]
-            
-        //Assign an image to the image view
-            
-        coins.image = UIImage.animatedImage(with: imageArray5, duration: 2)
-            
-            
-        coins.frame = CGRect(x: self.W, y: CGFloat(arc4random_uniform(UInt32(self.H))), width: self.W*(0.08),
-        height: self.H*(0.08))
-            
-        //Assign the size and position of the image
-            
-            
-        self.view.addSubview(coins)
-        self.view.bringSubviewToFront(coins)
-            
-        self.dynamicBehavior.addItem(coins)
-        self.dynamicBehavior.addLinearVelocity(CGPoint(x:-100, y:10), for: coins)
-        self.collisionBehavior.addItem(coins)
-          
-            
-            }
-            
+            coins.removeFromSuperview()//if plane collides with the coins,the coins should be removed from view
+            self.CoinsCollectedTotalScore += 10 //add 10 points to the total score in this situation
+                
         }
-                
-            
+        //self.collisionBehavior.addItem(coins)
+        }
     }
         
-
+       
+}
+        self.GameOverScreen.isHidden = true //hide the game over screen image
+        
+        let GameOverView = UIImageView(image: nil)
+        GameOverView.image = UIImage(named:"game-over-screen.jpg")
+        
+        let when = DispatchTime.now() + 20
+        DispatchQueue.main.asyncAfter(deadline: when)
+        {
+          
+            self.GameOverScreen.alpha = 1
+            self.GameOverScreen.isHidden = false //display the game over screen image.
+            self.view.addSubview(GameOverView) //add the game over screen to the main view
+            self.view.bringSubviewToFront(GameOverView) //keep the game over screen in front of other objects
+            
+           
+        }
+        
+        
+}
+    
     override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
     }
