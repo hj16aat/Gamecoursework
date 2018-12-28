@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JWh-yh-hII" customClass="DraggedImageView" customModule="Game_Coursework" customModuleProvider="target">
-                                <rect key="frame" x="36" y="51" width="178" height="83"/>
+                                <rect key="frame" x="27" y="89" width="178" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wco-gm-SbO">
@@ -31,8 +31,33 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gB9-cT-xXN">
-                                <rect key="frame" x="0.0" y="32" width="708" height="362"/>
+                                <rect key="frame" x="-4" y="0.0" width="722" height="387"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9u-cc-iGd">
+                                        <rect key="frame" x="131" y="214" width="108" height="73"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="PLAY AGAIN "/>
+                                        <connections>
+                                            <action selector="PlayAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UDV-Sr-k9P"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pe-BD-NFg">
+                                        <rect key="frame" x="314" y="218" width="92" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="EXIT"/>
+                                        <connections>
+                                            <action selector="Exit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lQm-ke-f7A"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GAME OVER " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lV-6x-kqQ">
+                                        <rect key="frame" x="216" y="31" width="307" height="121"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -41,8 +66,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="LQ2-9e-a4I"/>
                     <connections>
+                        <outlet property="ExitButton" destination="gB9-cT-xXN" id="cxC-Zi-hwp"/>
                         <outlet property="GameOverScreen" destination="gB9-cT-xXN" id="3jO-20-RD0"/>
+                        <outlet property="PlayAgainButton" destination="gB9-cT-xXN" id="X7M-bq-Saj"/>
                         <outlet property="SequenceOfTreeImages" destination="wco-gm-SbO" id="Nii-iv-nbg"/>
+                        <outlet property="TextField" destination="gB9-cT-xXN" id="RKw-EC-dsk"/>
+                        <outlet property="TotalScore" destination="gB9-cT-xXN" id="UeR-8z-MM4"/>
                         <outlet property="aeroplaneImage" destination="JWh-yh-hII" id="wnW-5M-gxR"/>
                         <outlet property="movingroadImage" destination="eaf-t0-a8I" id="wMY-af-Vfd"/>
                     </connections>

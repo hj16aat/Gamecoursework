@@ -13,6 +13,7 @@
 		8E00AFD821C272EE00C574C8 /* star coin rotate 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E00AFD221C272EE00C574C8 /* star coin rotate 2.png */; };
 		8E00AFD921C272EE00C574C8 /* star coin rotate 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E00AFD321C272EE00C574C8 /* star coin rotate 5.png */; };
 		8E00AFDA21C272EE00C574C8 /* star coin rotate 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E00AFD421C272EE00C574C8 /* star coin rotate 6.png */; };
+		8E02881621D63D74007AA644 /* ViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E02881521D63D74007AA644 /* ViewControllerTest.swift */; };
 		8E04510C219D8D1B0064D8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E04510B219D8D1B0064D8C3 /* AppDelegate.swift */; };
 		8E04510E219D8D1B0064D8C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E04510D219D8D1B0064D8C3 /* ViewController.swift */; };
 		8E045111219D8D1B0064D8C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E04510F219D8D1B0064D8C3 /* Main.storyboard */; };
@@ -115,6 +116,7 @@
 		8E00AFD221C272EE00C574C8 /* star coin rotate 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star coin rotate 2.png"; sourceTree = "<group>"; };
 		8E00AFD321C272EE00C574C8 /* star coin rotate 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star coin rotate 5.png"; sourceTree = "<group>"; };
 		8E00AFD421C272EE00C574C8 /* star coin rotate 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star coin rotate 6.png"; sourceTree = "<group>"; };
+		8E02881521D63D74007AA644 /* ViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTest.swift; sourceTree = "<group>"; };
 		8E045108219D8D1B0064D8C3 /* Game Coursework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Coursework.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E04510B219D8D1B0064D8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E04510D219D8D1B0064D8C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				8E0563F221A6C73F0010A1B0 /* tree17.png */,
 				8E04510B219D8D1B0064D8C3 /* AppDelegate.swift */,
 				8E04510D219D8D1B0064D8C3 /* ViewController.swift */,
+				8E02881521D63D74007AA644 /* ViewControllerTest.swift */,
 				8E00AFCF21C272ED00C574C8 /* star coin rotate 1.png */,
 				8E00AFD221C272EE00C574C8 /* star coin rotate 2.png */,
 				8E00AFD021C272ED00C574C8 /* star coin rotate 3.png */,
@@ -558,6 +561,7 @@
 				8E04510C219D8D1B0064D8C3 /* AppDelegate.swift in Sources */,
 				8E08FFAE21ADD71400784508 /* DraggedImage.swift in Sources */,
 				8E045114219D8D1B0064D8C3 /* Game_Coursework.xcdatamodeld in Sources */,
+				8E02881621D63D74007AA644 /* ViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

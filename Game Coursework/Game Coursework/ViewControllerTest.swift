@@ -9,12 +9,12 @@
 import UIKit //function for the user interface
 
 
-protocol subviewDelegate{
+protocol subviewDelegateTest{
     func changeSomething()
 }
 
 
-class ViewController: UIViewController, subviewDelegate {
+class ViewControllerTest: UIViewController, subviewDelegateTest {
   
     
     let W = UIScreen.main.bounds.width //define width to fit different phone screens
@@ -64,7 +64,7 @@ class ViewController: UIViewController, subviewDelegate {
         super.viewDidLoad()
         
         
-        aeroplaneImage.myDelegate = self
+        aeroplaneImage.myDelegate = (self as! subviewDelegate)
         
         //adding the different behaviors for the objects in the game
         

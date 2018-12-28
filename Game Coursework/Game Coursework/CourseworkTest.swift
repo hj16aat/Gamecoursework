@@ -207,7 +207,7 @@ class ViewController: UIViewController, subviewDelegate {
             if(self.aeroplaneImage.frame.intersects(AnimatedBirds.frame))
             {
                 
-                self.CoinsCollectedTotalScore -= 5// remove 5 points from total score if plane collides with birds
+                self.CoinsCollectedTotalScore -= 10// remove 5 points from total score if plane collides with birds
                 
             }
 
